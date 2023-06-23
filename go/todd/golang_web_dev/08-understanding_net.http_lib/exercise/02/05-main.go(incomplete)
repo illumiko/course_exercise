@@ -1,0 +1,50 @@
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"net"
+	"text/template"
+)
+
+var tpl *template.Template
+var fileName = "05-index.gohtml"
+
+func init() {
+	tpl = template.Must(template.ParseFiles("./" + fileName))
+}
+
+func main() {
+	lis, err := net.Listen("tcp", ":8080")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer lis.Close()
+	for {
+		conn, err := lis.Accept()
+		if err != nil {
+			log.Fatal(err)
+		}
+		go handleConn(conn)
+	}
+}
+func handleConn(conn net.Conn) {
+	response(conn)
+	defer conn.Close()
+}
+func response(conn net.Conn) {
+	scanner := bufio.NewScanner(conn)
+	var ran int
+	for scanner.Scan() {
+		ln := scanner.Text()
+		fmt.Fprintln(conn, ln)
+		if ran == 0 {
+		}
+		if ln == "" {
+			break
+		}
+		ran++
+	}
+	fmt.Fprintln(conn, "Connection broke")
+}

@@ -1,0 +1,18 @@
+@keyframes left-pop {
+  from {
+    transform: translate(-1000px);
+  }
+}
+.animation-left-pop {
+  animation: left-pop 900ms ease-in-out forwards;
+}
+
+body {
+  background: #333;
+}
+
+.picShowcase h1 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=stye.css.map */

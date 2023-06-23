@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GuessingGame</title>
+	<style>
+		body{
+			background: #222;
+			color: white;
+			display: grid;
+			place-items: center;
+			font-family: verdana;
+		}
+		.container{
+			display: grid;
+			place-items: center;
+		}
+		button{
+			font-size: 1.2rem;
+			padding: 1rem 2rem;
+			border: none;
+			outline: none;
+			margin-top: 2rem;
+			color: black
+			background: #fc1
+		}
+
+		button:active {
+			transform: scale(0.9);
+		}
+	</style>
+	<script defer src="./index.js"></script>
+</head>
+<body>
+	<h1>Number Guessing Game</h1>
+	<section class="container">
+		<h2>Select a number between <span>1-10</span></h2>
+	<form action="">
+		<input type="text" name="numberInput" id="userInput">
+	</form>
+		<button id="guess">Guess</button>
+	<h2 id="results"></h2>
+	</section>
+
+	
+</body>
+</html>

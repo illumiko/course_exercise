@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main-style.css" />
+    <script defer src="./index.js"></script>
+    <title>Beatmaker</title>
+  </head>
+  <body>
+    <!--<header>-->
+    <!--<h1>Beat Maker</h1>-->
+    <!--</header>-->
+
+    <nav class="navbar" id="navbar">
+      <h2>Navigate</h2>
+      <ul>
+        <button class="play">Play</button>
+        <a href="#hihat">
+          <li class="liItem1 liItems">Hihat</li>
+        </a>
+        <a href="#clapSounds">
+          <li class="liItem2 liItems">Clap</li>
+        </a>
+        <a href="#crashSounds">
+          <li class="liItem3 liItems">Crash</li>
+        </a>
+        <a href="#snareSounds">
+          <li class="liItem4 liItems">Snare</li>
+        </a>
+        <a href="#openhatSounds">
+          <li class="liItem5 liItems">Openhat</li>
+        </a>
+        <a href="#shakerSounds">
+          <li class="liItem6 liItems">Shake</li>
+        </a>
+        <a href="#kickSounds">
+          <li class="liItem7 liItems">Kick</li>
+        </a>
+        <input class="tempo" type="range" min="50" max="300" value="150" />
+        <h3 class="sliderText">150</h3>
+      </ul>
+    </nav>
+
+    <div id="mainContent">
+      <section id="hihat" class="HiHat">
+        <h2>HiHat</h2>
+        <p>Mute</p>
+        <select name="hiHatSelect" id="hihatSoundSelect">
+          <option value="./sounds/hihat/hihat-808.wav">hihat-808</option>
+          <option value="./sounds/hihat/hihat-acoustic01.wav">
+            hihat-acoustic01
+          </option>
+          <option value="./sounds/hihat/hihat-acoustic02.wav">
+            hihat-acoustic02
+          </option>
+        </select>
+        <article class="hihatSoundsPads">
+          <div class="hihatSoundPad hihatSoundPad1 pads1 pad"></div>
+          <div class="hihatSoundPad hihatSoundPad2 pads2 pad"></div>
+          <div class="hihatSoundPad hihatSoundPad3 pads3 pad"></div>
+          <div class="hihatSoundPad hihatSoundPad4 pads4 pad"></div>
+          <div class="hihatSoundPad hihatSoundPad5 pads5 pad"></div>
+          <div class="hihatSoundPad hihatSoundPad6 pads6 pad"></div>
+          <div class="hihatSoundPad hihatSoundPad7 pads7 pad"></div>
+          <div class="hihatSoundPad hihatSoundPad8 pads8 pad"></div>
+        </article>
+      </section>
+
+      <section id="clapSounds" class="clapSounds">
+        <h2>Clap</h2>
+        <p>Mute</p>
+        <select name="clapSoundSelect" id="clapSoundSelect">
+          <option value="./sounds/clap/clap-crushed.wav">clap-crushed</option>
+          <option value="./sounds/clap/clap-analog.wav">clap-analog</option>
+          <option value="./sounds/clap/clap-808.wav">clap-808</option>
+        </select>
+        <article class="clapSoundsPads">
+          <div class="clapSoundPad clapSoundPad1 pads1 pad"></div>
+          <div class="clapSoundPad clapSoundPad2 pads2 pad"></div>
+          <div class="clapSoundPad clapSoundPad3 pads3 pad"></div>
+          <div class="clapSoundPad clapSoundPad4 pads4 pad"></div>
+          <div class="clapSoundPad clapSoundPad5 pads5 pad"></div>
+          <div class="clapSoundPad clapSoundPad6 pads6 pad"></div>
+          <div class="clapSoundPad clapSoundPad7 pads7 pad"></div>
+          <div class="clapSoundPad clapSoundPad8 pads8 pad"></div>
+        </article>
+      </section>
+
+      <section id="crashSounds" class="crashSounds">
+        <h2>Crash</h2>
+        <p>Mute</p>
+        <select name="crashSoundSelect" id="crashSoundSelect">
+          <option value="./sounds/crash/crash-acoustic.wav">
+            crash-acoustic
+          </option>
+          <option value="./sounds/crash/crash-808.wav">crash-808</option>
+          <option value="./sounds/crash/cowbell-808.wav">cowbell-808</option>
+        </select>
+        <article class="crashSoundsPads">
+          <div class="crashSoundPad crashSoundPad1 pads1 pad"></div>
+          <div class="crashSoundPad crashSoundPad2 pads2 pad"></div>
+          <div class="crashSoundPad crashSoundPad3 pads3 pad"></div>
+          <div class="crashSoundPad crashSoundPad4 pads4 pad"></div>
+          <div class="crashSoundPad crashSoundPad5 pads5 pad"></div>
+          <div class="crashSoundPad crashSoundPad6 pads6 pad"></div>
+          <div class="crashSoundPad crashSoundPad7 pads7 pad"></div>
+          <div class="crashSoundPad crashSoundPad8 pads8 pad"></div>
+        </article>
+      </section>
+
+      <section id="snareSounds" class="snareSounds">
+        <h2>Snare</h2>
+        <p>Mute</p>
+        <select name="snareSoundSelect" id="snareSoundSelect">
+          <option value="./sounds/snare/snare-electro.wav">
+            snare-electro
+          </option>
+          <option value="./sounds/snare/snare-808.wav">snare-808</option>
+          <option value="./sounds/snare/snare-block.wav">snare-block</option>
+        </select>
+        <article class="snareSoundsPads">
+          <div class="snareSoundPad snareSoundPad1 pads1 pad"></div>
+          <div class="snareSoundPad snareSoundPad2 pads2 pad"></div>
+          <div class="snareSoundPad snareSoundPad3 pads3 pad"></div>
+          <div class="snareSoundPad snareSoundPad4 pads4 pad"></div>
+          <div class="snareSoundPad snareSoundPad5 pads5 pad"></div>
+          <div class="snareSoundPad snareSoundPad6 pads6 pad"></div>
+          <div class="snareSoundPad snareSoundPad7 pads7 pad"></div>
+          <div class="snareSoundPad snareSoundPad8 pads8 pad"></div>
+        </article>
+      </section>
+
+      <section id="openhatSounds" class="openhatSounds">
+        <h2>Openhatk</h2>
+        <p>Mute</p>
+        <select name="openhatSoundSelect" id="openhatSoundSelect">
+          <option value="./sounds/openhat/openhat-808.wav">openhat-808</option>
+          <option value="./sounds/openhat/openhat-analog.wav">
+            openhat-analog
+          </option>
+          <option value="./sounds/openhat/openhat-acoustic01.wav">
+            opqnhat-acoustic01
+          </option>
+        </select>
+        <article class="openhatSoundsPads">
+          <div class="openhatSoundPad openhatSoundPad1 pads1 pad"></div>
+          <div class="openhatSoundPad openhatSoundPad2 pads2 pad"></div>
+          <div class="openhatSoundPad openhatSoundPad3 pads3 pad"></div>
+          <div class="openhatSoundPad openhatSoundPad4 pads4 pad"></div>
+          <div class="openhatSoundPad openhatSoundPad5 pads5 pad"></div>
+          <div class="openhatSoundPad openhatSoundPad6 pads6 pad"></div>
+          <div class="openhatSoundPad openhatSoundPad7 pads7 pad"></div>
+          <div class="openhatSoundPad openhatSoundPad8 pads8 pad"></div>
+        </article>
+      </section>
+
+      <section id="shakerSounds" class="shakerSounds">
+        <h2>shaker</h2>
+        <p>Mute</p>
+        <select name="shakerSoundSelect" id="shakerSoundSelect">
+          <option value="./sounds/shaker/shaker-analog.wav">
+            shaker-analog
+          </option>
+          <option value="./sounds/shaker/shaker-suckup.wav">
+            shaker-suckupwav
+          </option>
+          <option value="./sounds/shaker/shaker-shuffle.wav">
+            shaker-shuffle
+          </option>
+        </select>
+        <article class="shakerSoundsPads">
+          <div class="shakerSoundPad shakerSoundPad1 pads1 pad"></div>
+          <div class="shakerSoundPad shakerSoundPad2 pads2 pad"></div>
+          <div class="shakerSoundPad shakerSoundPad3 pads3 pad"></div>
+          <div class="shakerSoundPad shakerSoundPad4 pads4 pad"></div>
+          <div class="shakerSoundPad shakerSoundPad5 pads5 pad"></div>
+          <div class="shakerSoundPad shakerSoundPad6 pads6 pad"></div>
+          <div class="shakerSoundPad shakerSoundPad7 pads7 pad"></div>
+          <div class="shakerSoundPad shakerSoundPad8 pads8 pad"></div>
+        </article>
+      </section>
+
+      <section id="kickSounds" class="kickSounds">
+        <h2>Kick</h2>
+        <p>Mute</p>
+        <select name="kickSoundSelect" id="kickSoundSelect">
+          <option value="./sounds/kick/kick-deep.wav">kick-deep</option>
+          <option value="./sounds/kick/kick-tron.wav">kick-tron</option>
+          <option value="./sounds/kick/kick-plain.wav">kick-plain</option>
+        </select>
+        <article class="kickSoundsPads">
+          <div class="kickSoundPad kickSoundPad1 pads1 pad"></div>
+          <div class="kickSoundPad kickSoundPad2 pads2 pad"></div>
+          <div class="kickSoundPad kickSoundPad3 pads3 pad"></div>
+          <div class="kickSoundPad kickSoundPad4 pads4 pad"></div>
+          <div class="kickSoundPad kickSoundPad5 pads5 pad"></div>
+          <div class="kickSoundPad kickSoundPad6 pads6 pad"></div>
+          <div class="kickSoundPad kickSoundPad7 pads7 pad"></div>
+          <div class="kickSoundPad kickSoundPad8 pads8 pad"></div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>

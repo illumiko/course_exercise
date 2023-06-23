@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <p>
+            length of {{.}} = {{length .}}
+        </p>
+        <p>
+            just a regular loop:
+            {{range $index, $value := loop_to_10}}
+            {{$index}}. {{$value}} banana
+            {{end}}
+        </p>
+    </body>
+</html>     

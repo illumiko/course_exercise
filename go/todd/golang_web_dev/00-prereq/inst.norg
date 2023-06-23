@@ -1,0 +1,28 @@
+* Hands on
+** 1
+   -  [x] create a type square
+   -  [x] create a type circle
+   -  [x] attach a method to each that calculates area and returns it
+   -  [x] create a type shape which defines an interface as anything which has the area method
+   -  [x] create a func info which takes type shape and then prints the area
+   -  [x] create a value of type square
+   -  [x] create a value of type circle
+   -  [x] use func info to print the area of square
+   -  [x] use func info to print the area of circle
+** 2
+   - [x] create a struct that holds person fields
+   - [x] create a struct that holds secret agent fields and embeds person type
+   - [x] attach a method to person: pSpeak
+   - [x] attach a method to secret agent: saSpeak
+   - [x] create a variable of type person
+   - [x] create a variable of type secret agent
+   - [x] print a field from person
+   - [x] run pSpeak attached to the variable of type person
+   - [x] print a field from secret agent
+   - [x] run saSpeak attached to the variable of type secret agent
+   - [x] run pSpeak attached to the variable of type secret agent
+** 3
+   - [x] create an interface type that both person and secretAgent implement
+   - [x] declare a func with a parameter of the interface’s type
+   - [x] call that func in main and pass in a value of type person
+   - [x] call that func in main and pass in a value of type secretAgent

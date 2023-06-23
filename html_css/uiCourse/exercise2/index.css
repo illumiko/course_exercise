@@ -1,0 +1,68 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #212527;
+    color: #9FB2B9;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    margin: 2em auto 0;
+}
+.card {
+    /* background: #337590; */
+    display: grid;
+    grid-template-columns: 1fr 1000fr;
+    align-items: center;
+    border-radius: 1em;
+    margin-bottom: 2em;
+}
+p, h3 {
+    margin: 0;
+}
+span {
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background-color: #3eb4e4;
+    margin-right: 2em;
+    text-align: center;
+}
+
+/* 
+
+   Your fixes below:
+   
+   My solution included using the following properties:  
+   width, background, padding, margin,
+   text-transform, font-size, letter-spacing & color
+   
+*/
+
+.container {
+    width: 90%;
+}
+
+.card {
+    padding: 2em;
+    border: #3eb4e4 2px solid;
+    color: white;
+}
+
+p.date {
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 0.7em;
+
+}
+
+h3 {
+    letter-spacing: 2;
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+}

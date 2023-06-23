@@ -1,0 +1,429 @@
+@keyframes left-pop {
+  from {
+    transform: translate(-1000px);
+  }
+}
+.animation-left-pop {
+  animation: left-pop 900ms ease-in-out forwards;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #e5e7eb;
+}
+
+@keyframes pop {
+  0% {
+    transform: translate(-1000px);
+  }
+  70%, 100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+.sports-tag, .anime-tag, .entertainment-tag, .health-tag {
+  background: #fbbf24;
+  font-size: 1.3rem;
+  width: max-content;
+  padding: 0.5rem 1rem;
+  color: black;
+  border-radius: 2rem;
+}
+
+.health-tag {
+  background: #10b981;
+}
+
+.entertainment-tag {
+  background: #0ea5e9;
+}
+
+.anime-tag {
+  background: #f43f5e;
+}
+
+.comp-name-color {
+  color: #f59e0b;
+}
+
+.btn {
+  text-decoration: none;
+  background: white;
+  color: black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  transition: all 300ms ease-in;
+}
+.btn:hover {
+  background: #e5e7eb;
+}
+
+.active, footer article a:hover, header nav ul .links li .c-color:hover {
+  background: #f59e0b;
+  color: black;
+}
+
+header {
+  z-index: 1000;
+  height: 100%;
+  padding-bottom: 5rem;
+}
+header nav {
+  min-width: 100%;
+  background-color: white;
+  position: fixed;
+  z-index: 10;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  header nav {
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+    grid-auto-flow: column;
+  }
+}
+header nav h1 {
+  animation: pop 1s ease forwards;
+  opacity: 0;
+}
+header nav ul {
+  margin: 0;
+}
+@media (min-width: 768px) {
+  header nav ul {
+    justify-self: right;
+    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+  }
+}
+header nav ul .links {
+  list-style-type: none;
+  line-height: 2;
+  font-size: 1.1rem;
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  header nav ul .links {
+    text-align: center;
+    line-height: auto;
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+  }
+}
+header nav ul .links li {
+  animation: pop 1s ease 500ms forwards;
+  opacity: 0;
+}
+header nav ul .links li .c-color {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+}
+header nav ul .links li .c-color:hover {
+  animation: none;
+  transition: all 400ms ease;
+}
+@media (min-width: 768px) {
+  header nav ul .links li .c-color {
+    padding: 1rem;
+  }
+}
+header nav ul .icon {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+header nav ul .icon li {
+  display: none;
+  text-decoration: none;
+  animation: pop 1s ease 700ms forwards;
+  opacity: 0;
+}
+@media (min-width: 768px) {
+  header nav ul .icon li {
+    display: block;
+  }
+}
+header nav ul .icon li .facebook:hover {
+  fill: dodgerblue;
+  transition: all ease 400ms;
+}
+header nav ul .icon li .instagram:hover {
+  fill: url(#ig-grad);
+  transition: all ease 400ms;
+}
+header nav ul .icon li .twitter:hover {
+  fill: dodgerblue;
+  transition: all ease 400ms;
+}
+header nav ul .icon li .youtube:hover {
+  fill: crimson;
+  transition: all ease 400ms;
+}
+header nav ul .icon li a {
+  padding: 1rem;
+}
+header nav ul .icon li a svg {
+  height: 2rem;
+  width: 2rem;
+}
+
+.welcome {
+  position: relative;
+  background: url("https://images.unsplash.com/photo-1482614312710-79c1d29bda2a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80") fixed center center no-repeat;
+  background-size: cover;
+  z-index: 5;
+  padding: 10vh 0;
+  display: grid;
+  align-items: center;
+}
+.welcome::before {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.welcome .section-text {
+  margin: 5vw;
+  margin-top: 0;
+  z-index: 5;
+  color: white;
+}
+@media (min-width: 768px) {
+  .welcome .section-text {
+    width: 30vw;
+  }
+}
+.welcome .section-text p[class=sports-tag] {
+  width: fit-content;
+  font-size: 1.3rem;
+}
+.welcome .section-text p {
+  font-size: 1.7rem;
+}
+.welcome .section-text h2 {
+  font-size: 4rem;
+  margin: 2rem 0;
+  font-weight: 900;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.welcome .section-text h2,
+.welcome .section-text p {
+  margin-top: 0;
+}
+.welcome .section-text a {
+  line-height: 4;
+}
+
+.content {
+  padding: 2rem 0;
+  margin: 1rem 10vw;
+}
+.content .content-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem 1.5rem;
+  justify-content: center;
+}
+.content .content-container p[class] {
+  margin: auto;
+  margin-top: 1rem;
+}
+.content .picked-article1 .img {
+  background: url(./img/articles/cosplay.jpg) center center/cover no-repeat;
+}
+.content .picked-article2 .img {
+  background: url(./img/articles/sakura_thinking.jpg) center center/cover no-repeat;
+}
+.content .picked-article3 .img {
+  background: url(./img/articles/car_racing.jpg) center center/cover no-repeat;
+}
+.content .picked-article4 .img {
+  background: url(./img/articles/man_running.jpg) center center/cover no-repeat;
+}
+.content .picked-article5 .img {
+  background: url(./img/articles/vegetables.jpg) center center/cover no-repeat;
+}
+.content .picked-article6 .img {
+  background: url(./img/articles/smile_emoji.jpg) center center/cover no-repeat;
+}
+.content .picked-article7 .img {
+  background: url(./img/articles/concert.jpg) center center/cover no-repeat;
+}
+.content .picked-article8 .img {
+  background: url(./img/articles/movie.png) center center/cover no-repeat;
+}
+.content .picked-article9 .img {
+  background: url(./img/articles/mountan.jpg) center center/cover no-repeat;
+}
+.content .b-article-styling {
+  background: white;
+  padding: 2rem 2rem;
+  text-align: center;
+  margin: 0;
+  max-width: 30rem;
+  position: relative;
+}
+.content .b-article-styling a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  height: 100%;
+}
+.content .b-article-styling a::after {
+  content: "";
+  transition: all ease-in 250ms;
+  transform: scale(0);
+  background: rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 1024px) {
+  .content .b-article-styling a:active {
+    transform: scale(0.7);
+  }
+}
+@media (min-width: 1024px) {
+  .content .b-article-styling a:hover::after {
+    content: "Click here to read more";
+    position: absolute;
+    transform: scale(1);
+    font-size: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: 0 0 0 0;
+  }
+}
+.content .b-article-styling .img {
+  height: 36vh;
+  width: 100%;
+}
+.content .b-article-styling h3 {
+  font-weight: 900;
+  font-size: 1.9rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: #374151;
+}
+.content .b-article-styling p {
+  font-size: 1.4rem;
+}
+.content h2 {
+  font-weight: 900;
+}
+@media (min-width: 768px) {
+  .content .content-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1024px) {
+  .content .content-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+footer {
+  background: #1c1917;
+  color: white;
+}
+footer .footer-container {
+  display: grid;
+  margin: 0 10vw;
+  justify-content: center;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  footer .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  footer .footer-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+footer .copywrite-info-container {
+  background: #44403c;
+  grid-column: 1/-1;
+  margin-top: 0.9rem;
+}
+footer .copywrite-info-container article {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+footer .newsletter-form form input {
+  display: block;
+  padding: 0.5rem;
+  border: none;
+  outline: none;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+footer .newsletter-form form input[type=submit] {
+  background: #fbbf24;
+  font-size: 1.3rem;
+  color: black;
+}
+footer .newsletter-form form input[type=submit]:hover {
+  background: #f59e0b;
+}
+footer .site-link {
+  display: grid;
+}
+footer .club-shill a {
+  color: black;
+  background: #fbbf24;
+  border-radius: 0.5rem;
+}
+footer article {
+  margin: 1rem;
+}
+footer article a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: all 400ms ease;
+  color: white;
+}
+footer article a:hover {
+  animation-name: none;
+}
+
+.bout-pg .about-us {
+  margin: 0 10vw;
+  padding: 3rem;
+  background: white;
+  color: black;
+}
+.bout-pg .about-us h2 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .bout-pg .about-us h2 {
+    font-size: 3rem;
+  }
+}
+.bout-pg .about-us .about-us-text {
+  line-height: 1.8;
+  width: 60vw;
+}
+.bout-pg .about-us .about-us-text p {
+  font-size: 1.4rem;
+}
+
+/*# sourceMappingURL=main-style.css.map */

@@ -1,0 +1,17 @@
+{
+  "name": "goaladd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss ./tailwind/tailwind.css -o ./dev/style.css"
+  },
+  "keywords": [],
+  "author": "Eyanat",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss-cli": "^9.0.1",
+    "tailwindcss": "^2.2.17"
+  }
+}

@@ -1,0 +1,49 @@
+package main
+
+import (
+	"reflect"
+	"testing"
+	"time"
+)
+
+func TestCheckWebsites(t *testing.T) {
+	mockPingWebsites := func(url string) bool {
+		if url == "https://yahoo.net" {
+			return false
+		}
+		return true
+	}
+
+	websites := []string{
+		"https://google.com",
+		"https://youtube.com",
+		"https://yahoo.net",
+	}
+	response := CheckWebsite(mockPingWebsites, websites)
+	expect := map[string]bool{
+		"https://google.com":  true,
+		"https://youtube.com": true,
+		"https://yahoo.net":   false,
+	}
+	if !reflect.DeepEqual(expect, response) {
+		t.Errorf("\nExpect: %v\nResponse: %v", expect, response)
+	}
+
+}
+func BenchmarkCheckWebstei(b *testing.B) {
+	slowPingWebsites := func(url string) bool {
+		time.Sleep(20 * time.Millisecond)
+		return true
+	}
+	urls := make([]string, 100)
+
+	for i := 0; i >= len(urls); i++ {
+		urls[i] = "a url"
+	}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		go func ()  {
+            CheckWebsite(slowPingWebsites, urls)
+		}()
+	}
+}
