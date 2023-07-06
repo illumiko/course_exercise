@@ -1,17 +1,18 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 )
 
-func PlayerServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "20")
+type InMemoryStore struct{}
+
+func (i *InMemoryStore) GetPlayerScore(name string) int {
+	return 123
 
 }
 
 func main() {
-	handler := http.HandlerFunc(PlayerServer)
-	log.Fatal(http.ListenAndServe(":8080", handler))
+	server := &PlayerServer{&InMemoryStore{}}
+	log.Fatal(http.ListenAndServe(":8080", server))
 }
