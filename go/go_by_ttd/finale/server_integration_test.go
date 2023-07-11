@@ -8,7 +8,7 @@ import (
 
 func TestServer(t *testing.T) {
 	store := newInMemoryStore()
-	server := PlayerServer{store}
+	server := NewPlayerServer(store)
 	player := "Pepper"
 
 	for i := 0; i < 3; i++ {

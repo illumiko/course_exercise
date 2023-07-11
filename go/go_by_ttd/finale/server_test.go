@@ -14,7 +14,7 @@ func TestGETPlayers(t *testing.T) {
 			"Flow":   10,
 		},
 	}
-	server := &PlayerServer{&store}
+	server := NewPlayerServer(&store)
 	tests := []struct {
 		name               string
 		player             string
@@ -46,7 +46,7 @@ func TestStoreWins(t *testing.T) {
 		scores:   map[string]int{},
 		winCalls: nil,
 	}
-	server := &PlayerServer{&store}
+	server := NewPlayerServer(&store)
 
 	t.Run("Accepted on Post Req", func(t *testing.T) {
 		req, _ := http.NewRequest(http.MethodPost, "/players/John", nil)
@@ -65,7 +65,7 @@ func TestStoreWins(t *testing.T) {
 
 func TestLeague(t *testing.T) {
 	store := StubStore{}
-	server := NewPlayerServer{&store}
+	server := NewPlayerServer(&store)
 	t.Run("Get status 200 for /league", func(t *testing.T) {
 		req, _ := http.NewRequest(http.MethodGet, "/league", nil)
 		resp := httptest.NewRecorder()
