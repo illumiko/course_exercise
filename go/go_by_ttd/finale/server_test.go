@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"reflect"
@@ -85,6 +86,7 @@ func TestLeague(t *testing.T) {
 		assertStatus(t, resp.Code, http.StatusOK)
 
 	})
+
 	t.Run("Return League table as Json", func(t *testing.T) {
 		expectedLeague := []Player{
 			{"John", 20},
@@ -92,20 +94,14 @@ func TestLeague(t *testing.T) {
 		store := StubStore{league: expectedLeague}
 		server := NewPlayerServer(&store)
 
-		req, _ := http.NewRequest(http.MethodGet, "/league", nil)
+		req := newLeagueRequest()
 		resp := httptest.NewRecorder()
 
 		server.ServeHTTP(resp, req)
 
-		var got []Player
-		err := json.NewDecoder(resp.Body).Decode(&got)
-		if err != nil {
-			t.Fatal("Unable to parse Json:", err)
-		}
-
-		if !reflect.DeepEqual(expectedLeague, got) {
-			t.Errorf("expeted:%v\ngot:%v", expectedLeague, got)
-		}
+		got := getLeagueFromResponse(t, resp.Body)
+		assertStatus(t, resp.Code, http.StatusOK)
+		assertLeague(t, got, expectedLeague)
 
 	})
 
@@ -124,6 +120,32 @@ func assertStatus(t testing.TB, got, want int) {
 		t.Errorf("\nwant: %v,\ngot:%v", want, got)
 	}
 
+}
+
+func assertLeague(t testing.TB, got, want []Player) {
+	t.Helper()
+	if !reflect.DeepEqual(want, got) {
+		t.Errorf("expected:%v\ngot:%v", want, got)
+	}
+
+}
+
+func getLeagueFromResponse(t testing.TB, body io.Reader) []Player {
+	t.Helper()
+
+	var got []Player
+	err := json.NewDecoder(body).Decode(&got)
+
+	if err != nil {
+		t.Fatal("json error:", err)
+	}
+	return got
+
+}
+
+func newLeagueRequest() *http.Request {
+	req, _ := http.NewRequest(http.MethodGet, "/league", nil)
+	return req
 }
 
 func newPostWinRequest(name string) *http.Request {

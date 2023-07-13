@@ -8,8 +8,8 @@ import (
 )
 
 type Player struct {
-	name string
-	wins int
+	Name string
+	Wins int
 }
 
 type PlayerStore interface {
