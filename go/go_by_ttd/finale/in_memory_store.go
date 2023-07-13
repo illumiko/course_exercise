@@ -15,7 +15,6 @@ func (i *InMemoryStore) RecordWin(name string) {
 
 func newInMemoryStore() *InMemoryStore {
 	return &InMemoryStore{
-		scores: map[string]int{},
+		scores: map[string]int{"John": 2},
 	}
-
 }
