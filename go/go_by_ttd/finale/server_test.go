@@ -100,8 +100,10 @@ func TestLeague(t *testing.T) {
 		server.ServeHTTP(resp, req)
 
 		got := getLeagueFromResponse(t, resp.Body)
+
 		assertStatus(t, resp.Code, http.StatusOK)
 		assertLeague(t, got, expectedLeague)
+		assertContentType(t, resp, jsonContentType)
 
 	})
 
@@ -126,6 +128,15 @@ func assertLeague(t testing.TB, got, want []Player) {
 	t.Helper()
 	if !reflect.DeepEqual(want, got) {
 		t.Errorf("expected:%v\ngot:%v", want, got)
+	}
+
+}
+func assertContentType(t testing.TB, got *httptest.ResponseRecorder, want string) {
+	t.Helper()
+	response := got.Result().Header.Get("content-type")
+	if response != want {
+		t.Errorf("Unexpected content-type\nexpected:%v\ngot:%v", want, response)
+
 	}
 
 }
