@@ -13,6 +13,10 @@ func (i *InMemoryStore) RecordWin(name string) {
 
 }
 
+func (i *InMemoryStore) GetLeague() []Player {
+	return nil
+}
+
 func newInMemoryStore() *InMemoryStore {
 	return &InMemoryStore{
 		scores: map[string]int{"John": 2},
